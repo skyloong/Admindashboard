@@ -1,12 +1,27 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="inspire">
+    <v-app id="inspire">
+      <Navigation></Navigation>
+      <HeaderBar></HeaderBar>
+      <v-main>
+        <v-container class="fill-height" fluid>
+          <router-view />
+        </v-container>
+      </v-main>
+    </v-app>
+  </v-app>
 </template>
+
+<script>
+export default {
+  name: "App",
+  components: {
+    HeaderBar: () => import("@/components/base/HeaderBar.vue"),
+    Navigation: () => import("@/components/base/Navigation.vue"),
+  },
+};
+</script>
+
 
 <style lang="scss">
 #app {
@@ -15,18 +30,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
