@@ -28,6 +28,7 @@
             :to="child.path"
             link
             exact
+            @click="changeNav(child.text)"
           >
             <v-list-item-action v-if="child.icon">
               <v-icon>{{ child.icon }}</v-icon>
@@ -39,7 +40,13 @@
             </v-list-item-content>
           </v-list-item>
         </v-list-group>
-        <v-list-item v-else :key="item.text" :to="item.path" link exact>
+        <v-list-item
+          v-else
+          :key="item.text"
+          :to="item.path"
+          link
+          exact
+        >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
@@ -59,11 +66,15 @@ export default {
   name: "Navigation",
   data() {
     return {
-      drawer: true,//控制移动设备时菜单的显示
+      drawer: true, //控制移动设备时菜单的显示
       items: [
         { icon: "mdi-contacts", text: "Contacts", path: "/" },
-        { icon: "mdi-history", text: "Frequently contacted", path: "/closetab" },
-        { icon: "mdi-content-copy", text: "Duplicates", path: "/b" },
+        {
+          icon: "mdi-history",
+          text: "Frequently contacted",
+          path: "/closetab",
+        },
+        { icon: "mdi-content-copy", text: "Duplicates", path: "/home" },
         {
           icon: "mdi-chevron-up",
           "icon-alt": "mdi-chevron-down",
@@ -95,7 +106,7 @@ export default {
     };
   },
   computed: {
-    miniVariant: function() {
+    miniVariant: function () {
       return this.$store.getters.miniVariant;
     },
   },
