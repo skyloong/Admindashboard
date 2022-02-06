@@ -46,6 +46,11 @@ export default {
   watch: {
     $route: "changeNav",
   },
+  beforeMount() {
+      if (this.$route.name !== 'Index') {
+          this.changeNav();
+      }
+  },
   methods: {
     changeTab: function (index) {
       this.tabList[this.currentTab].active = false;

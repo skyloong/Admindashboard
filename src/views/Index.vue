@@ -5,7 +5,7 @@
       <HeaderBar></HeaderBar>
       <v-main>
         <HeaderTab></HeaderTab>
-        <v-container style="background-color: rgb(240, 242, 245);" class="fill-height" fluid>
+        <v-container style="background-color: rgb(240, 242, 245);" fluid fill-height>
           <router-view />
         </v-container>
       </v-main>
