@@ -1,15 +1,17 @@
 <template>
   <v-app id="inspire">
-    <v-app id="inspire">
-      <Navigation></Navigation>
-      <HeaderBar></HeaderBar>
-      <v-main>
-        <HeaderTab></HeaderTab>
-        <v-container style="background-color: rgb(240, 242, 245);" fluid fill-height>
-          <router-view />
-        </v-container>
-      </v-main>
-    </v-app>
+    <Navigation></Navigation>
+    <HeaderBar></HeaderBar>
+    <v-main>
+      <HeaderTab class="shadow"></HeaderTab>
+      <v-row>
+        <v-col cols="12">
+          <v-container fluid>
+            <router-view />
+          </v-container>
+        </v-col>
+      </v-row>
+    </v-main>
   </v-app>
 </template>
 
@@ -23,3 +25,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.main {
+  background-color: rgb(240, 242, 245);
+}
+</style>
